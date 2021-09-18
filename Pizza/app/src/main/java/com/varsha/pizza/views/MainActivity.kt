@@ -1,7 +1,8 @@
-package com.varsha.pizza
+package com.varsha.pizza.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.varsha.pizza.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
