@@ -14,7 +14,7 @@ data class MyEntity(
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "size") val size: String,
     @ColumnInfo(name = "crust") val crust: String,
-    @ColumnInfo(name = "price") val price: String
+    @ColumnInfo(name = "price") val price: Double
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

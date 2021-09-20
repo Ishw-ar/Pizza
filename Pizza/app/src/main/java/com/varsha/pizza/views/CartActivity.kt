@@ -34,5 +34,8 @@ class CartActivity : AppCompatActivity() {
             cartList.addAll(it)
             adapter2.notifyDataSetChanged()
         })
+        viewModel.totalPrice().observe(this, Observer {
+            text_totalPrice.text= "Total Price is ₹ $it"
+        })
     }
 }

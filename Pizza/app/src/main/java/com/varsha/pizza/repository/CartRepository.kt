@@ -18,5 +18,8 @@ class CartRepository(private val myDao: MyDao) {
     fun getItems():LiveData<List<MyEntity>>{
        return myDao.getItems()
     }
+    fun totalPrice(): LiveData<Double> {
+        return myDao.totalPrice()
+    }
 
 }

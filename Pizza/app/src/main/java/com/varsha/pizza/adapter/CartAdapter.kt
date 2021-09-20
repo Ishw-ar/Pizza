@@ -7,14 +7,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.varsha.pizza.R
 import com.varsha.pizza.local.MyEntity
-
 import kotlinx.android.synthetic.main.cart_item.view.*
 
-class CartAdapter(var cartList: List<MyEntity>) :
-    RecyclerView.Adapter<CartAdapter.PizzaViewHolder>() {
+class CartAdapter(var cartList: List<MyEntity>) : RecyclerView.Adapter<CartAdapter.PizzaViewHolder>() {
 
-    inner class PizzaViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView)
+    inner class PizzaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PizzaViewHolder {
@@ -30,9 +27,10 @@ class CartAdapter(var cartList: List<MyEntity>) :
             pizza_name.text=currentCartList.title
             pizza_size.text=currentCartList.size
             pizza_crust.text=currentCartList.crust
-            pizza_price.text=currentCartList.price
+            pizza_price.text="₹ "+currentCartList.price.toString()
         }
     }
+
 
     override fun getItemCount() = cartList.size
 

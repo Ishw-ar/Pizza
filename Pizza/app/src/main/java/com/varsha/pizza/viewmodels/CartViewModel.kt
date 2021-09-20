@@ -14,5 +14,8 @@ class CartViewModel(private val repository: CartRepository) : ViewModel() {
     fun getItems(): LiveData<List<MyEntity>> {
         return repository.getItems()
     }
+    fun totalPrice(): LiveData<Double> {
+        return repository.totalPrice()
+    }
 
 }

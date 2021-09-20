@@ -26,6 +26,7 @@ interface MyDao {
      */
     @Query("SELECT COUNT(*) FROM my_cart_table")
     fun count(): Int
-
+    @Query("SELECT SUM(price) from my_cart_table")
+    fun totalPrice(): LiveData<Double>
 
 }

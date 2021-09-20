@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), ItemListener {
         }
     }
 
-    override fun addCartItems(name: String, size: String, crust: String, price: String) {
+    override fun addCartItems(name: String, size: String, crust: String, price: Double) {
         val myEntity = MyEntity(name, size, crust, price)
         viewModel.addItems(myEntity)
     }

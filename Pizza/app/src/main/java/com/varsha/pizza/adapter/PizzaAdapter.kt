@@ -31,6 +31,7 @@ class PizzaAdapter(var PizzaList: List<Crust>, val listener: ItemListener) :
         var size = StringBuilder()
         var crust = StringBuilder()
         var sizePrice = 0.0
+        var cartPrice=0.0
         holder.itemView.apply {
             text_pizza_title.text = currentPizzaList.name
             // text_pizza_description.text=currentPizzaList.description
@@ -67,6 +68,7 @@ class PizzaAdapter(var PizzaList: List<Crust>, val listener: ItemListener) :
 
                                 text_price.text =
                                     "₹ $sizePrice"
+                                cartPrice=sizePrice
                                 size.clear()
                                 size.append(sizeArray[position])
 
@@ -76,6 +78,7 @@ class PizzaAdapter(var PizzaList: List<Crust>, val listener: ItemListener) :
                                 sizePrice = currentPizzaList.sizes?.get(position)?.price!!
                                 text_price.text =
                                     "₹ $sizePrice"
+                                cartPrice=sizePrice
                                 size.clear()
                                 size.append(sizeArray[position])
                             }
@@ -84,6 +87,7 @@ class PizzaAdapter(var PizzaList: List<Crust>, val listener: ItemListener) :
 
                                 text_price.text =
                                     "₹ $sizePrice"
+                                cartPrice=sizePrice
                                 size.clear()
                                 size.append(sizeArray[position])
 
@@ -116,6 +120,7 @@ class PizzaAdapter(var PizzaList: List<Crust>, val listener: ItemListener) :
                                 val finalPrice = crustPrice + sizePrice
                                 text_price.text =
                                     "₹ $finalPrice"
+                                cartPrice=finalPrice
                                 crust.clear()
                                 crust.append(crustArray[position])
                             }
@@ -124,6 +129,7 @@ class PizzaAdapter(var PizzaList: List<Crust>, val listener: ItemListener) :
                                 val finalPrice = crustPrice + sizePrice
                                 text_price.text =
                                     "₹ $finalPrice"
+                                cartPrice=finalPrice
                                 crust.clear()
                                 crust.append(crustArray[position])
                             }
@@ -145,7 +151,7 @@ class PizzaAdapter(var PizzaList: List<Crust>, val listener: ItemListener) :
         holder.itemView.button_add_to_cart.setOnClickListener {
             listener.addCartItems(
                 currentPizzaList.name!!,
-                size.toString(), crust.toString(), "199"
+                size.toString(), crust.toString(), cartPrice
             )
         }
     }
